@@ -5,87 +5,65 @@
     <title>DEVAM | ROGUE</title>
     <style>
         body { 
-            /* Arka plan fotoğrafı burada ayarlandı */
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images2.imgbox.com/71/34/4S72H63b_o.png');
+            /* Arka planda sandalyede oturan adam */
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                        url('https://i.ibb.co/LhyMvt0/1000054646.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #fff; 
-            text-align: center; 
-            font-family: 'Segoe UI', sans-serif; 
-            margin: 0; 
-            padding: 0;
-            min-height: 100vh;
+            color: #fff; text-align: center; font-family: sans-serif; margin: 0; padding: 0; min-height: 100vh;
         }
-        
-        .profile-container { margin-top: 50px; position: relative; display: inline-block; }
-        
-        /* Kırmızı parlayan kilit logosu */
+        .profile-container { margin-top: 50px; }
         .hero-img { 
-            width: 180px; height: 180px; border-radius: 50%; 
-            border: 3px solid #ff0000; object-fit: cover; 
-            box-shadow: 0 0 30px #ff0000; 
+            width: 180px; height: 180px; border-radius: 50%; border: 3px solid #ff0000; 
+            object-fit: cover; box-shadow: 0 0 30px #ff0000; 
         }
-        
-        h1 { font-size: 2.2em; letter-spacing: 5px; margin: 15px 0 10px; color: #fff; text-transform: uppercase; }
-        
-        /* İletişim Kartı */
+        h1 { font-size: 2.2em; letter-spacing: 5px; margin: 15px 0; text-shadow: 0 0 10px #ff0000; }
         .card { 
-            background: rgba(10, 10, 10, 0.9); 
-            padding: 25px; border-radius: 10px; 
-            display: inline-block; border: 1px solid #333; 
-            width: 85%; max-width: 380px; 
-            backdrop-filter: blur(5px);
+            background: rgba(10, 10, 10, 0.9); padding: 25px; border-radius: 15px; 
+            display: inline-block; border: 1px solid #333; width: 85%; max-width: 380px; 
+            backdrop-filter: blur(10px);
         }
-        
         .btn { 
-            display: block; background: #111; color: #ff0000; text-decoration: none; 
-            padding: 12px; margin: 10px 0; border: 1px solid #ff0000; font-weight: bold; 
-            font-size: 1.1em; transition: 0.4s; border-radius: 5px; 
+            display: block; background: rgba(255, 0, 0, 0.1); color: #ff0000; text-decoration: none; 
+            padding: 12px; margin: 10px 0; border: 1px solid #ff0000; font-weight: bold; border-radius: 8px; 
         }
-        .btn:hover { background: #ff0000; color: #fff; box-shadow: 0 0 20px #ff0000; transform: scale(1.02); }
-        
-        .community-box { margin-top: 15px; padding: 10px; border-top: 1px solid #222; }
-        .community-link { color: #ff9900; font-weight: bold; text-decoration: none; display: block; font-size: 1.1em; }
-        .raw-link { color: #fff; font-family: monospace; display: block; margin-top: 5px; font-size: 0.9em; word-break: break-all; }
-
-        .tag-section { margin-top: 30px; font-size: 3em; font-weight: 900; color: #ff0000; text-shadow: 0 0 20px #ff0000; letter-spacing: 5px; padding-bottom: 40px; }
+        .btn:hover { background: #ff0000; color: #fff; box-shadow: 0 0 20px #ff0000; }
+        .tag { color: #ff0000; font-size: 3em; font-weight: 900; margin-top: 30px; text-shadow: 0 0 20px #ff0000; }
     </style>
 </head>
-<body>
+<body onclick="playMusic()">
 
     <div class="profile-container">
-        <img src="https://images2.imgbox.com/6a/e4/A7k42g3N_o.png" class="hero-img">
+        <img src="https://i.ibb.co/LhyMvt0/1000054646.jpg" class="hero-img">
     </div>
 
     <h1>DEVAM</h1>
 
     <div class="card">
-        <p style="color: #ff0000; font-weight: bold; letter-spacing: 2px; font-size: 0.8em; margin-bottom: 10px;">OFFICIAL ACCOUNTS</p>
-        <p style="color: #ccc; margin-bottom: 20px; font-size: 0.9em;">📞 +90 535 947 92 87</p>
-        
+        <p style="color: #ff0000; font-weight: bold;">OFFICIAL ACCOUNTS</p>
+        <p>📞 +90 535 947 92 87</p>
         <a class="btn" href="https://t.me/Devamesat" target="_blank">TELEGRAM</a>
         <a class="btn" href="https://tiktok.com/@devamesat" target="_blank">TIKTOK</a>
         <a class="btn" href="https://instagram.com/devamesat" target="_blank">INSTAGRAM</a>
-        
-        <div class="community-box">
-            <a class="community-link" href="https://t.me/thecommonwealt" target="_blank">COMMUNITY / KANAL</a>
-            <span class="raw-link">https://t.me/thecommonwealt</span>
-        </div>
+        <hr style="border: 0.1px solid #222;">
+        <a href="https://t.me/thecommonwealt" target="_blank" style="color: #ff9900; text-decoration: none; font-weight: bold;">COMMUNITY / KANAL</a>
+        <br><span style="font-size: 0.8em; color: #888;">https://t.me/thecommonwealt</span>
     </div>
 
-    <div class="tag-section">TAG: DEVAM</div>
+    <div class="tag">TAG: DEVAM</div>
 
-    <iframe id="music" width="0" height="0" src="https://www.youtube.com/embed/S_8qMhOIn2o?enablejsapi=1" frameborder="0" allow="autoplay"></iframe>
+    <audio id="massaka" loop>
+        <source src="https://www.mboxdrive.com/Massaka-Katliam3.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
-        // Sayfaya tıklandığında müziği otomatik başlatır
-        document.body.onclick = function() {
-            var iframe = document.getElementById('music');
-            iframe.src = "https://www.youtube.com/embed/S_8qMhOIn2o?autoplay=1";
-        };
+        function playMusic() {
+            var audio = document.getElementById("massaka");
+            audio.play().catch(function(error) {
+                console.log("Müzik başlatılamadı, tıkla: ", error);
+            });
+        }
     </script>
-
 </body>
 </html>
