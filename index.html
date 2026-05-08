@@ -2,56 +2,150 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>DEVAM | ESAT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROGUE | 1453</title>
     <style>
-        body { 
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('arkaplan.jpg');
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* Arka Plan Görseli (Massaka) */
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('arkaplan.jpg') no-repeat center center;
             background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #fff; text-align: center; font-family: sans-serif; margin: 0; padding: 0; min-height: 100vh;
+            filter: brightness(0.35) contrast(1.2); /* Yağmurun öne çıkması için ideal karartma */
+            z-index: -2;
         }
-        .profile-container { margin-top: 50px; }
-        .hero-img { 
-            width: 180px; height: 180px; border-radius: 50%; border: 3px solid #ff0000; 
-            object-fit: cover; box-shadow: 0 0 30px #ff0000; 
+
+        /* Yağmur Katmanı */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
-        .card { 
-            background: rgba(10, 10, 10, 0.9); padding: 25px; border-radius: 15px; 
-            display: inline-block; border: 1px solid #333; width: 85%; max-width: 380px; 
-            backdrop-filter: blur(10px);
+
+        /* Orta Yazı */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            pointer-events: none;
+            user-select: none;
         }
-        .btn { 
-            display: block; background: rgba(255, 0, 0, 0.1); color: #ff0000; text-decoration: none; 
-            padding: 12px; margin: 10px 0; border: 1px solid #ff0000; font-weight: bold; border-radius: 8px; 
+
+        h1 {
+            font-size: 5rem;
+            letter-spacing: 20px;
+            margin: 0;
+            opacity: 0.7;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
         }
-        .tag { color: #ff0000; font-size: 3em; font-weight: 900; margin-top: 30px; text-shadow: 0 0 20px #ff0000; }
+
+        p {
+            letter-spacing: 8px;
+            opacity: 0.4;
+            font-size: 1.2rem;
+        }
     </style>
 </head>
-<body onclick="document.getElementById('massaka').play()">
+<body onclick="startEffect()">
 
-    <div class="profile-container">
-        <img src="arkaplan.jpg" class="hero-img">
+    <div id="background"></div>
+    <canvas id="rainCanvas"></canvas>
+
+    <div class="content">
+        <h1>DEVAM</h1>
+        <p>ROGUE 1453</p>
     </div>
 
-    <h1>DEVAM</h1>
-
-    <div class="card">
-        <p style="color: #ff0000; font-weight: bold;">OFFICIAL ACCOUNTS</p>
-        <p>📞 +90 535 947 92 87</p>
-        <a class="btn" href="https://t.me/Devamesat" target="_blank">TELEGRAM</a>
-        <a class="btn" href="https://tiktok.com/@devamesat" target="_blank">TIKTOK</a>
-        <a class="btn" href="https://instagram.com/devamesat" target="_blank">INSTAGRAM</a>
-        <hr style="border: 0.1px solid #222;">
-        <a href="https://t.me/thecommonwealt" target="_blank" style="color: #ff9900; text-decoration: none; font-weight: bold;">COMMUNITY / KANAL</a>
-    </div>
-
-    <div class="tag">TAG: DEVAM</div>
-
-    <audio id="massaka" loop>
+    <audio id="audio" loop>
         <source src="muzik.mp3" type="audio/mpeg">
     </audio>
 
+    <script>
+        const canvas = document.getElementById('rainCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let drops = [];
+        const numberOfDrops = 450; // Yağmurun sıklığı
+
+        class Drop {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * -canvas.height;
+                // Gerçekçi hız varyasyonları
+                this.speed = Math.random() * 20 + 15; 
+                this.length = Math.random() * 25 + 10;
+                this.opacity = Math.random() * 0.25 + 0.05;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.strokeStyle = rgba(255, 255, 255, ${this.opacity});
+                ctx.lineWidth = 1;
+                ctx.moveTo(this.x, this.y);
+                ctx.lineTo(this.x, this.y + this.length);
+                ctx.stroke();
+            }
+
+            update() {
+                this.y += this.speed;
+                if (this.y > canvas.height) {
+                    this.reset();
+                }
+                this.draw();
+            }
+        }
+
+        function initRain() {
+            drops = [];
+            for (let i = 0; i < numberOfDrops; i++) {
+                drops.push(new Drop());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drops.forEach(drop => drop.update());
+            requestAnimationFrame(animate);
+        }
+
+        // Müzik çalma fonksiyonu
+        function startEffect() {
+            document.getElementById('audio').play();
+        }
+
+        // Pencere boyutu değişince yağmuru uyarla
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initRain();
+        });
+
+        initRain();
+        animate();
+    </script>
 </body>
 </html>
