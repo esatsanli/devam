@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESAT | DEVAM</title>
+    <title>DEVAM</title>
     <style>
         body, html {
             margin: 0;
@@ -14,7 +14,7 @@
             background-color: #000;
         }
 
-        /* Arka Plan Görseli (Massaka) */
+        /* Arka Plan Görseli */
         #background {
             position: fixed;
             top: 0;
@@ -23,7 +23,7 @@
             height: 100%;
             background: url('arkaplan.jpg') no-repeat center center;
             background-size: cover;
-            filter: brightness(0.35) contrast(1.2); /* Yağmurun öne çıkması için ideal karartma */
+            filter: brightness(0.3) contrast(1.1); /* Yağmurun ve yazının netliği için ayarlandı */
             z-index: -2;
         }
 
@@ -35,7 +35,7 @@
             z-index: -1;
         }
 
-        /* Orta Yazı */
+        /* Orta Yazı - Sadece DEVAM */
         .content {
             position: absolute;
             top: 50%;
@@ -43,23 +43,18 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: white;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Arial Black', Gadget, sans-serif;
             pointer-events: none;
             user-select: none;
         }
 
         h1 {
-            font-size: 5rem;
-            letter-spacing: 20px;
+            font-size: 6rem;
+            letter-spacing: 25px;
             margin: 0;
-            opacity: 0.7;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-        }
-
-        p {
-            letter-spacing: 8px;
-            opacity: 0.4;
-            font-size: 1.2rem;
+            opacity: 0.85;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -70,7 +65,6 @@
 
     <div class="content">
         <h1>DEVAM</h1>
-        <p>ROGUE 1453</p>
     </div>
 
     <audio id="audio" loop>
@@ -85,7 +79,7 @@
         canvas.height = window.innerHeight;
 
         let drops = [];
-        const numberOfDrops = 450; // Yağmurun sıklığı
+        const numberOfDrops = 500; // Daha yoğun ve gerçekçi yağmur
 
         class Drop {
             constructor() {
@@ -95,10 +89,9 @@
             reset() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * -canvas.height;
-                // Gerçekçi hız varyasyonları
-                this.speed = Math.random() * 20 + 15; 
-                this.length = Math.random() * 25 + 10;
-                this.opacity = Math.random() * 0.25 + 0.05;
+                this.speed = Math.random() * 25 + 15; // Hızlı düşen damlalar
+                this.length = Math.random() * 30 + 10;
+                this.opacity = Math.random() * 0.2 + 0.05;
             }
 
             draw() {
@@ -132,12 +125,10 @@
             requestAnimationFrame(animate);
         }
 
-        // Müzik çalma fonksiyonu
         function startEffect() {
             document.getElementById('audio').play();
         }
 
-        // Pencere boyutu değişince yağmuru uyarla
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
