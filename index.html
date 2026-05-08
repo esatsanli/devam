@@ -2,28 +2,52 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>DEVAM | RESMİ SİTE</title>
+    <title>DEVAM | ROGUE</title>
     <style>
-        body { background-color: #000; color: #fff; text-align: center; font-family: sans-serif; margin: 0; padding: 0; }
-        .hero-img { width: 250px; height: 250px; border-radius: 50%; border: 4px solid #333; object-fit: cover; margin-top: 50px; }
-        .info { background: #111; padding: 20px; border-radius: 15px; display: inline-block; margin-top: 20px; border: 1px solid #222; width: 80%; max-width: 400px; }
-        .link { display: block; color: #0088cc; text-decoration: none; margin: 10px 0; font-weight: bold; font-size: 1.1em; }
-        .tag { color: red; font-size: 2.5em; font-weight: bold; margin-top: 30px; letter-spacing: 2px; }
+        body { background-color: #0d0d0d; color: #ffffff; text-align: center; font-family: 'Courier New', Courier, monospace; margin: 0; padding: 0; overflow-x: hidden; }
+        /* Parlayan Zombi Karakteri */
+        .hero-img { width: 220px; height: 220px; border-radius: 50%; border: 3px solid #ff0000; object-fit: cover; margin-top: 40px; box-shadow: 0 0 20px #ff0000; }
+        h1 { font-size: 3em; letter-spacing: 5px; margin: 10px 0; text-shadow: 2px 2px #ff0000; }
+        /* Bilgi Kutusu */
+        .info { background: rgba(20, 20, 20, 0.9); padding: 25px; border-radius: 5px; display: inline-block; margin-top: 15px; border: 1px solid #333; width: 85%; max-width: 450px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .link { display: block; color: #ff0000; text-decoration: none; margin: 12px 0; font-weight: bold; font-size: 1.2em; transition: 0.3s; }
+        .link:hover { color: #fff; transform: scale(1.05); }
+        /* Yeni TAG */
+        .tag { color: #ff0000; font-size: 3em; font-weight: bold; margin-top: 40px; text-transform: uppercase; text-shadow: 0 0 10px #ff0000; }
+        hr { border: 0.5px solid #222; margin: 15px 0; }
     </style>
 </head>
 <body>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bayezid_I_by_an_anonymous_painter.jpg/300px-Bayezid_I_by_an_anonymous_painter.jpg" class="hero-img">
+    <img src="https://image.tmdb.org/t/p/original/6vmsi8V3rC8iA8pS1CqX7Zl2n6.jpg" class="hero-img">
+    
     <h1>DEVAM</h1>
+
     <div class="info">
-        <p>İletişim: +905359479287</p>
-        <a class="link" href="https://t.me/Devamesat" target="_blank">Telegram: @Devamesat</a>
-        <a class="link" href="https://tiktok.com/@devamesat" target="_blank">Tiktok: @devamesat</a>
-        <a class="link" href="https://instagram.com/devamesat" target="_blank">Instagram: @devamesat</a>
-        <p>Email: devamesat@gmail.com</p>
-        <hr style="border: 0.5px solid #333;">
-        <a class="link" href="https://t.me/thecommonwealt" target="_blank" style="color: #ff9900;">Telegram Kanalım</a>
+        <p style="color: #888;">CONTACT / İLETİŞİM</p>
+        <p>Tel: +90 535 947 92 87</p>
+        <a class="link" href="https://t.me/Devamesat" target="_blank">TELEGRAM</a>
+        <a class="link" href="https://tiktok.com/@devamesat" target="_blank">TIKTOK</a>
+        <a class="link" href="https://instagram.com/devamesat" target="_blank">INSTAGRAM</a>
+        <p style="font-size: 0.9em; color: #666;">devamesat@gmail.com</p>
+        <hr>
+        <a class="link" href="https://t.me/thecommonwealt" target="_blank" style="color: #ff9900;">COMMUNITY / KANAL</a>
     </div>
-    <div class="tag">TAG: 1453</div>
-    <iframe width="0" height="0" src="https://www.youtube.com/embed/S_8qMhOIn2o?autoplay=1" frameborder="0" allow="autoplay"></iframe>
+
+    <div class="tag">TAG: DEVAM</div>
+
+    <div style="display:none">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/661845662&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+
+    <script>
+        // Sayfaya tıklandığında müziğin çalmasını garanti altına alır
+        document.body.addEventListener('click', function() {
+            var iframe = document.querySelector('iframe');
+            var src = iframe.src;
+            if (src.indexOf('auto_play=true') == -1) {
+                iframe.src += "&auto_play=true";
+            }
+        });
+    </script>
 </body>
 </html>
