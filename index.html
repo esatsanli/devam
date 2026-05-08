@@ -5,51 +5,87 @@
     <title>DEVAM | ROGUE</title>
     <style>
         body { 
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
-                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop');
+            /* Arka plan fotoğrafı burada ayarlandı */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images2.imgbox.com/71/34/4S72H63b_o.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #fff; text-align: center; font-family: 'Courier New', Courier, monospace; margin: 0; padding: 0; min-height: 100vh;
+            color: #fff; 
+            text-align: center; 
+            font-family: 'Segoe UI', sans-serif; 
+            margin: 0; 
+            padding: 0;
+            min-height: 100vh;
         }
+        
+        .profile-container { margin-top: 50px; position: relative; display: inline-block; }
+        
+        /* Kırmızı parlayan kilit logosu */
         .hero-img { 
-            width: 180px; height: 180px; border-radius: 50%; border: 3px solid #ff0000; 
-            object-fit: cover; margin-top: 50px; box-shadow: 0 0 30px #ff0000; 
+            width: 180px; height: 180px; border-radius: 50%; 
+            border: 3px solid #ff0000; object-fit: cover; 
+            box-shadow: 0 0 30px #ff0000; 
         }
+        
+        h1 { font-size: 2.2em; letter-spacing: 5px; margin: 15px 0 10px; color: #fff; text-transform: uppercase; }
+        
+        /* İletişim Kartı */
         .card { 
-            background: rgba(0, 0, 0, 0.9); padding: 25px; border-radius: 10px; 
-            display: inline-block; margin-top: 20px; border: 1px solid #333; width: 85%; max-width: 400px; 
+            background: rgba(10, 10, 10, 0.9); 
+            padding: 25px; border-radius: 10px; 
+            display: inline-block; border: 1px solid #333; 
+            width: 85%; max-width: 380px; 
+            backdrop-filter: blur(5px);
         }
+        
         .btn { 
-            display: block; color: #ff0000; text-decoration: none; padding: 12px; 
-            margin: 10px 0; border: 1px solid #ff0000; font-weight: bold; border-radius: 5px; 
+            display: block; background: #111; color: #ff0000; text-decoration: none; 
+            padding: 12px; margin: 10px 0; border: 1px solid #ff0000; font-weight: bold; 
+            font-size: 1.1em; transition: 0.4s; border-radius: 5px; 
         }
-        .btn:hover { background: #ff0000; color: #fff; box-shadow: 0 0 20px #ff0000; }
-        .tag { color: #ff0000; font-size: 3.5em; font-weight: bold; margin-top: 30px; text-shadow: 0 0 15px #ff0000; }
+        .btn:hover { background: #ff0000; color: #fff; box-shadow: 0 0 20px #ff0000; transform: scale(1.02); }
+        
+        .community-box { margin-top: 15px; padding: 10px; border-top: 1px solid #222; }
+        .community-link { color: #ff9900; font-weight: bold; text-decoration: none; display: block; font-size: 1.1em; }
+        .raw-link { color: #fff; font-family: monospace; display: block; margin-top: 5px; font-size: 0.9em; word-break: break-all; }
+
+        .tag-section { margin-top: 30px; font-size: 3em; font-weight: 900; color: #ff0000; text-shadow: 0 0 20px #ff0000; letter-spacing: 5px; padding-bottom: 40px; }
     </style>
 </head>
 <body>
-    <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=2070&auto=format&fit=crop" class="hero-img">
-    <h1>DEVAM</h1>
-    <div class="card">
-        <p>📞 +90 535 947 92 87</p>
-        <a class="btn" href="https://t.me/Devamesat">TELEGRAM</a>
-        <a class="btn" href="https://tiktok.com/@devamesat">TIKTOK</a>
-        <a class="btn" href="https://instagram.com/devamesat">INSTAGRAM</a>
-        <hr style="border: 0.5px solid #222;">
-        <p style="color: #ff9900; font-weight: bold;">COMMUNITY / KANAL</p>
-        <a href="https://t.me/thecommonwealt" style="color: #fff; font-size: 0.8em;">https://t.me/thecommonwealt</a>
-    </div>
-    <div class="tag">TAG: DEVAM</div>
 
-    <iframe id="müzik" width="0" height="0" src="https://www.youtube.com/embed/S_8qMhOIn2o?enablejsapi=1" frameborder="0" allow="autoplay"></iframe>
+    <div class="profile-container">
+        <img src="https://images2.imgbox.com/6a/e4/A7k42g3N_o.png" class="hero-img">
+    </div>
+
+    <h1>DEVAM</h1>
+
+    <div class="card">
+        <p style="color: #ff0000; font-weight: bold; letter-spacing: 2px; font-size: 0.8em; margin-bottom: 10px;">OFFICIAL ACCOUNTS</p>
+        <p style="color: #ccc; margin-bottom: 20px; font-size: 0.9em;">📞 +90 535 947 92 87</p>
+        
+        <a class="btn" href="https://t.me/Devamesat" target="_blank">TELEGRAM</a>
+        <a class="btn" href="https://tiktok.com/@devamesat" target="_blank">TIKTOK</a>
+        <a class="btn" href="https://instagram.com/devamesat" target="_blank">INSTAGRAM</a>
+        
+        <div class="community-box">
+            <a class="community-link" href="https://t.me/thecommonwealt" target="_blank">COMMUNITY / KANAL</a>
+            <span class="raw-link">https://t.me/thecommonwealt</span>
+        </div>
+    </div>
+
+    <div class="tag-section">TAG: DEVAM</div>
+
+    <iframe id="music" width="0" height="0" src="https://www.youtube.com/embed/S_8qMhOIn2o?enablejsapi=1" frameborder="0" allow="autoplay"></iframe>
 
     <script>
-        // Sayfaya tıklandığında müziği başlatır
+        // Sayfaya tıklandığında müziği otomatik başlatır
         document.body.onclick = function() {
-            var frame = document.getElementById('müzik');
-            frame.src += "&autoplay=1";
+            var iframe = document.getElementById('music');
+            iframe.src = "https://www.youtube.com/embed/S_8qMhOIn2o?autoplay=1";
         };
     </script>
+
 </body>
 </html>
