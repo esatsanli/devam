@@ -4,26 +4,54 @@
     <meta charset="UTF-8">
     <title>DEVAM | ROGUE</title>
     <style>
-        body { background-color: #050505; color: #fff; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
+        body { 
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('https://i.ibb.co/LhyMvt0/1000054646.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff; 
+            text-align: center; 
+            font-family: 'Segoe UI', sans-serif; 
+            margin: 0; 
+            padding: 0;
+            min-height: 100vh;
+        }
         
-        /* Yeni Fotoğraf ve Kırmızı Parlama */
-        .profile-container { margin-top: 50px; position: relative; display: inline-block; }
-        .hero-img { width: 220px; height: 220px; border-radius: 50%; border: 4px solid #ff0000; object-fit: cover; box-shadow: 0 0 35px #ff0000; }
+        .profile-container { margin-top: 40px; }
+        .hero-img { 
+            width: 180px; height: 180px; border-radius: 50%; 
+            border: 3px solid #ff0000; object-fit: cover; 
+            box-shadow: 0 0 30px #ff0000; 
+        }
         
-        h1 { font-size: 2.5em; letter-spacing: 4px; margin: 20px 0 10px; color: #fff; text-transform: uppercase; }
+        h1 { font-size: 2.2em; letter-spacing: 5px; margin: 15px 0; text-shadow: 0 0 10px #ff0000; }
         
-        /* İletişim Kartı */
-        .card { background: rgba(15, 15, 15, 0.95); padding: 30px; border-radius: 10px; display: inline-block; border: 1px solid #222; width: 85%; max-width: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
-        .info-text { color: #888; font-size: 0.8em; margin-bottom: 20px; letter-spacing: 2px; }
+        .card { 
+            background: rgba(10, 10, 10, 0.9); 
+            padding: 25px; border-radius: 15px; 
+            display: inline-block; border: 1px solid #333; 
+            width: 85%; max-width: 380px; 
+            backdrop-filter: blur(10px);
+        }
         
-        /* Link Butonları */
-        .btn { display: block; background: #111; color: #ff0000; text-decoration: none; padding: 12px; margin: 10px 0; border: 1px solid #ff0000; font-weight: bold; font-size: 1.1em; transition: 0.4s; border-radius: 5px; }
-        .btn:hover { background: #ff0000; color: #fff; box-shadow: 0 0 20px #ff0000; transform: scale(1.02); }
+        .btn { 
+            display: block; background: rgba(255, 0, 0, 0.1); 
+            color: #ff0000; text-decoration: none; 
+            padding: 12px; margin: 10px 0; 
+            border: 1px solid #ff0000; font-weight: bold; 
+            border-radius: 8px; transition: 0.3s;
+        }
+        .btn:hover { background: #ff0000; color: #fff; box-shadow: 0 0 20px #ff0000; }
         
-        .community-link { color: #ff9900; font-weight: bold; text-decoration: none; display: block; margin-top: 15px; font-size: 1.1em; }
-        .raw-link { color: #fff; font-family: monospace; display: block; margin-top: 10px; font-size: 0.9em; word-break: break-all; }
+        .community-box { margin-top: 15px; padding: 10px; border-top: 1px solid #222; }
+        .raw-link { color: #888; font-size: 0.8em; display: block; margin-top: 5px; font-family: monospace; }
 
-        .tag-section { margin-top: 30px; font-size: 3.5em; font-weight: 900; color: #ff0000; text-shadow: 0 0 15px #ff0000; letter-spacing: 5px; }
+        .tag-section { 
+            margin-top: 30px; font-size: 3em; font-weight: 900; 
+            color: #ff0000; text-shadow: 0 0 20px #ff0000; 
+            padding-bottom: 40px;
+        }
     </style>
 </head>
 <body>
@@ -35,26 +63,25 @@
     <h1>DEVAM</h1>
 
     <div class="card">
-        <div class="info-text">OFFICIAL ACCOUNTS</div>
-        
-        <p style="margin-bottom: 15px; color: #ccc;">📞 +90 535 947 92 87</p>
+        <p style="color: #ff0000; font-weight: bold; letter-spacing: 2px;">OFFICIAL ACCOUNTS</p>
+        <p style="color: #ccc; margin-bottom: 20px;">📞 +90 535 947 92 87</p>
         
         <a class="btn" href="https://t.me/Devamesat" target="_blank">TELEGRAM</a>
         <a class="btn" href="https://tiktok.com/@devamesat" target="_blank">TIKTOK</a>
         <a class="btn" href="https://instagram.com/devamesat" target="_blank">INSTAGRAM</a>
         
-        <hr style="border: 0.1px solid #222; margin: 20px 0;">
-        
-        <a class="community-link" href="https://t.me/thecommonwealt" target="_blank">COMMUNITY / KANAL</a>
-        <span class="raw-link">https://t.me/thecommonwealt</span>
+        <div class="community-box">
+            <a href="https://t.me/thecommonwealt" target="_blank" style="color: #ff9900; text-decoration: none; font-weight: bold;">COMMUNITY / KANAL</a>
+            <span class="raw-link">https://t.me/thecommonwealt</span>
+        </div>
     </div>
 
     <div class="tag-section">TAG: DEVAM</div>
 
-    <iframe id="music" width="0" height="0" src="https://www.youtube.com/embed/S_8qMhOIn2o?autoplay=1" frameborder="0" allow="autoplay"></iframe>
+    <iframe id="music" width="0" height="0" src="https://www.youtube.com/embed/S_8qMhOIn2o?enablejsapi=1" frameborder="0" allow="autoplay"></iframe>
 
     <script>
-        // Sayfada herhangi bir yere tıklandığında müziği başlatır
+        // Sayfaya tıklandığında müziği otomatik başlatır
         document.body.onclick = function() {
             var iframe = document.getElementById('music');
             iframe.src = "https://www.youtube.com/embed/S_8qMhOIn2o?autoplay=1";
